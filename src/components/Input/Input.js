@@ -73,7 +73,7 @@ const StyledLabel = styled(ThemeLabel)(
       true: {
         '&::after': {
           content: '"*"',
-          color: 'accent',
+          color: 'primary',
           ml: '2px'
         }
       }

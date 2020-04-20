@@ -26,6 +26,7 @@ storiesOf('Input', module)
           name={`${size}Label`}
           label={`${size} Label Even Longer`}
           key={size}
+          placeholder={`${size}`}
           row
           required
         />

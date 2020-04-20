@@ -6,7 +6,7 @@ import { Layout, SEO, theme } from '../components';
 const StyledHeader = styled.h1`
   font-size: ${theme.fontSizes[5]};
   margin-top: 2rem;
-  ${theme.mediaQueries.md} {
+  ${theme.mediaQueries.sm} {
     font-size: ${theme.fontSizes[6]};
     margin-top: 0;
   }
@@ -29,7 +29,7 @@ const StyledImage = styled.img`
   filter: invert(97%) sepia(1%) saturate(357%) hue-rotate(158deg)
     brightness(115%) contrast(94%)
     drop-shadow(4px 12px 12px rgba(0, 0, 0, 0.33));
-  ${theme.mediaQueries.md} {
+  ${theme.mediaQueries.sm} {
     height: 20rem;
     width: 20rem;
   }

@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { variant } from 'styled-system';
-import { alpha, darken } from '@theme-ui/color';
+import { alpha } from '@theme-ui/color';
 import { theme } from '..';
+import darken from '../../gatsby-plugin-theme-ui/colorFunc';
 
 const StyledButton = styled('button')(
   {
@@ -22,10 +23,13 @@ const StyledButton = styled('button')(
           bg: props.color,
           border: 0,
           '&:hover': {
-            bg: darken(theme.colors[props.color], theme.opacity.hover)
+            bg: darken(theme.colors[props.color], [theme.opacity.hover])
           },
           '&:active': {
-            bg: darken(theme.colors[props.color], theme.opacity.selected)
+            bg: darken(theme.colors[props.color], [
+              theme.opacity.hover,
+              theme.opacity.selected
+            ])
           },
           '&:focus': {
             boxShadow: `0 0 4px 1px ${theme.colors[props.color]}`,
@@ -50,12 +54,12 @@ const StyledButton = styled('button')(
         ghost: {
           color: props.color,
           border: `${theme.borders[1]} transparent`,
-          bg: darken(theme.colors.background, theme.opacity.hover),
+          bg: darken(theme.colors.background, [theme.opacity.hover]),
           '&:hover': {
-            bg: darken(theme.colors.background, theme.opacity.focused)
+            bg: darken(theme.colors.background, [theme.opacity.focused])
           },
           '&:active': {
-            bg: darken(theme.colors.background, 0.15)
+            bg: darken(theme.colors.background, [0.15])
           },
           '&:focus': {
             border: `${theme.borders[1]} ${theme.colors[props.color]}`,
