@@ -2,23 +2,24 @@
 
 exports[`Header renders correctly 1`] = `
 <header
-  className="css-0"
+  className="sc-fzqBZW kvyVsY"
 >
   <div
-    className="css-1vomhux"
+    className="sc-AxirZ eYFUGo"
     height="100%"
     width={
       Array [
         null,
-        "32rem",
-        "42rem",
-        "52rem",
-        "68rem",
+        "536px",
+        "708px",
+        "900px",
+        "1080px",
+        "1200px",
       ]
     }
   >
     <div
-      className="css-klwo2j"
+      className="sc-fzqNJr SXYWe"
     >
       <p>
         hello world
