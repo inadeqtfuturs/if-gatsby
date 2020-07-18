@@ -10,6 +10,8 @@ const StyledButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 180px;
+  max-width: 220px;
   ${({ theme }) => css`
     border-radius: ${theme.radii.button}px;
   `}
@@ -19,8 +21,8 @@ const StyledButton = styled.button`
       variants: {
         default: {
           color: 'background',
+          border: `${theme.borders[1]} ${theme.colors[color]}`,
           bg: color,
-          border: 0,
           '&:hover': {
             bg: darken(color, [theme.opacity.hover])
           },
@@ -70,7 +72,8 @@ const StyledButton = styled.button`
       sm: {
         px: 2,
         py: 1,
-        fontSize: 0
+        fontSize: 0,
+        minWidth: 'auto'
       },
       md: {
         px: 3,

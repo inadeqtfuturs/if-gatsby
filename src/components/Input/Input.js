@@ -6,7 +6,8 @@ import { Input as ThemeInput, Label as ThemeLabel } from 'theme-ui';
 
 const FieldWrapper = styled('div')(
   {
-    display: 'flex'
+    display: 'flex',
+    marginBottom: '1rem'
   },
   variant({
     prop: 'row',
