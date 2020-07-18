@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 module.exports = {
   siteMetadata: {
     title: `if // sf`,
