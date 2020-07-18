@@ -13,6 +13,7 @@ const StyledButton = styled(Button)`
 storiesOf('Final Form Test', module).add('default', () => (
   <div>
     <Form
+      // eslint-disable-next-line no-console
       onSubmit={async body => console.log('body', body)}
       name="test"
       render={({ handleSubmit, submitting, form }) => {
