@@ -1,7 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { ThemeProvider } from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-import { Branding, Header, Footer, Main, Menu, PageWrapper } from '..';
+import {
+  Branding,
+  Header,
+  Footer,
+  Main,
+  Menu,
+  PageWrapper,
+  theme
+} from '@components';
 
 function Layout({ children }) {
   const { site } = useStaticQuery(
@@ -20,14 +29,16 @@ function Layout({ children }) {
   );
 
   return (
-    <PageWrapper>
-      <Header>
-        <Branding />
-        <Menu menuItems={site.siteMetadata.menu} />
-      </Header>
-      <Main>{children}</Main>
-      <Footer />
-    </PageWrapper>
+    <ThemeProvider theme={theme}>
+      <PageWrapper>
+        <Header>
+          <Branding />
+          <Menu menuItems={site.siteMetadata.menu} />
+        </Header>
+        <Main>{children}</Main>
+        <Footer />
+      </PageWrapper>
+    </ThemeProvider>
   );
 }
 

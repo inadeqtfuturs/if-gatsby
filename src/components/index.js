@@ -10,6 +10,7 @@ export { default as Branding } from './Branding/Branding';
 export { default as Menu } from './Menu/Menu';
 export { default as Button } from './Button/Button';
 export { default as Input } from './Input/Input';
+export { default as Radio } from './Radio/Radio';
 
 // page level components
 export { default as Header } from './Header/Header';

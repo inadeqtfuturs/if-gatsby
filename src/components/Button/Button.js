@@ -12,8 +12,10 @@ const StyledButton = styled.button`
   align-items: center;
   min-width: 180px;
   max-width: 220px;
-  ${({ theme }) => css`
+  ${({ theme, disabled }) => css`
     border-radius: ${theme.radii.button}px;
+    opacity: ${disabled && '0.85'};
+    pointer-events: ${disabled && 'none'};
   `}
   ${({ theme, color }) =>
     variant({
@@ -89,7 +91,7 @@ const StyledButton = styled.button`
   })}
 `;
 
-function Button({ children, color, disabled, onClick, size, type }) {
+function Button({ children, color, disabled, onClick, size, type, ...props }) {
   return (
     <StyledButton
       color={color}
@@ -97,6 +99,7 @@ function Button({ children, color, disabled, onClick, size, type }) {
       onClick={onClick}
       size={size}
       type={type}
+      {...props}
     >
       {children}
     </StyledButton>

@@ -27,7 +27,8 @@ const colors = {
   primary: '#28B4AD',
   secondary: '#4926F6',
   accent: '#3ca251',
-  muted: '#307c58'
+  muted: '#307c58',
+  danger: '#DE7283'
 };
 const body = 'Georgia';
 const heading = 'Helvetica Neue';

@@ -26,33 +26,34 @@ const FieldWrapper = styled('div')(
 const HelpText = styled.small``;
 
 const StyledInput = styled(ThemeInput)`
-  ${({ theme }) => css`
+  ${({ theme, ...props }) => css`
+    opacity: ${props.disabled && '0.65'};
+    border-color: ${props.error && theme.colors.danger};
     &:focus {
       box-shadow: 0 0 4px 1px ${theme.colors.primary};
       outline: none;
     }
   `}
-  ${(() =>
-    variant({
-      prop: 'size',
-      variants: {
-        sm: {
-          fontSize: 1,
-          p: 1,
-          mb: 2
-        },
-        md: {
-          fontSize: 2,
-          p: 2,
-          mb: 3
-        },
-        lg: {
-          fontSize: 4,
-          p: 2,
-          mb: 4
-        }
+  ${(variant({
+    prop: 'size',
+    variants: {
+      sm: {
+        fontSize: 1,
+        p: 1,
+        mb: 2
+      },
+      md: {
+        fontSize: 2,
+        p: 2,
+        mb: 3
+      },
+      lg: {
+        fontSize: 4,
+        p: 2,
+        mb: 4
       }
-    }),
+    }
+  }),
   variant({
     prop: 'row',
     variants: {
@@ -117,12 +118,17 @@ function Input({
   disabled,
   helpText,
   label,
+  input,
+  meta: { touched, submitError, error: syncError } = {},
   name,
   placeholder,
   required,
   row,
   size
 }) {
+  const error = submitError || syncError;
+  const hasError = !!(touched && error);
+
   return (
     <FieldWrapper disabled={disabled} row={row}>
       {label && (
@@ -135,6 +141,8 @@ function Input({
         placeholder={placeholder}
         row={row}
         size={size}
+        error={hasError}
+        {...input}
       />
       {helpText && <HelpText>{helpText}</HelpText>}
     </FieldWrapper>
@@ -145,6 +153,12 @@ Input.propTypes = {
   disabled: PropTypes.bool,
   helpText: PropTypes.string,
   label: PropTypes.string,
+  input: PropTypes.object,
+  meta: PropTypes.shape({
+    touched: PropTypes.bool,
+    submitError: PropTypes.bool,
+    syncError: PropTypes.bool
+  }),
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   required: PropTypes.bool,
@@ -156,6 +170,8 @@ Input.defaultProps = {
   disabled: false,
   helpText: null,
   label: null,
+  input: {},
+  meta: {},
   placeholder: null,
   required: false,
   row: false,

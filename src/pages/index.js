@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
-import { Layout, SEO, theme } from '../components';
+import { Layout, SEO, theme } from '@components';
 
 const StyledHeader = styled.h1`
   font-size: ${theme.fontSizes[5]};

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+// eslint-disable-next-line react/prop-types
 function SEO({ description, meta, title, keywords, image, path }) {
   const { site } = useStaticQuery(
     graphql`

@@ -14,6 +14,8 @@ module.exports = {
   "rules": {
     "jsx-a11y/href-no-hash": ["off"],
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
+    "react/jsx-props-no-spreading": ["off"],
+    "react/forbid-prop-types": ["off"],
     "import/no-extraneous-dependencies": [
       "warn",
       {
@@ -37,5 +39,13 @@ module.exports = {
         "ignoreRegExpLiterals": true
       }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": [
+        ["@components", "./src/components"],
+        ["@utils", "./src/utils"]
+      ]
+    }
   }
 }
