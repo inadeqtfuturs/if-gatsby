@@ -1,58 +1,54 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
+import styled, { css } from 'styled-components';
 import { variant } from 'styled-system';
 import { alpha } from '@theme-ui/color';
-import { theme } from '..';
 import darken from '../../gatsby-plugin-theme-ui/colorFunc';
 
-const StyledButton = styled('button')(
-  {
-    cursor: 'pointer',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: theme.radii.button
-  },
-  props =>
+const StyledButton = styled.button`
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${({ theme }) => css`
+    border-radius: ${theme.radii.button}px;
+  `}
+  ${({ theme, color }) =>
     variant({
       prop: 'type',
       variants: {
         default: {
           color: 'background',
-          bg: props.color,
+          bg: color,
           border: 0,
           '&:hover': {
-            bg: darken(theme.colors[props.color], [theme.opacity.hover])
+            bg: darken(color, [theme.opacity.hover])
           },
           '&:active': {
-            bg: darken(theme.colors[props.color], [
-              theme.opacity.hover,
-              theme.opacity.selected
-            ])
+            bg: darken(color, [theme.opacity.hover, theme.opacity.selected])
           },
           '&:focus': {
-            boxShadow: `0 0 4px 1px ${theme.colors[props.color]}`,
+            boxShadow: `0 0 4px 1px ${theme.colors[color]}`,
             outline: 'none'
           }
         },
         outline: {
-          color: props.color,
-          border: `${theme.borders[1]} ${theme.colors[props.color]}`,
+          color,
+          border: `${theme.borders[1]} ${theme.colors[color]}`,
           bg: 'transparent',
           '&:hover': {
-            bg: alpha(theme.colors[props.color], 0.1)
+            bg: alpha(color, 0.1)
           },
           '&:active': {
-            bg: alpha(theme.colors[props.color], 0.2)
+            bg: alpha(color, 0.2)
           },
           '&:focus': {
-            boxShadow: `0 0 8px 1px ${theme.colors[props.color]}`,
+            boxShadow: `0 0 8px 1px ${theme.colors[color]}`,
             outline: 'none'
           }
         },
         ghost: {
-          color: props.color,
+          color,
           border: `${theme.borders[1]} transparent`,
           bg: darken(theme.colors.background, [theme.opacity.hover]),
           '&:hover': {
@@ -62,13 +58,13 @@ const StyledButton = styled('button')(
             bg: darken(theme.colors.background, [0.15])
           },
           '&:focus': {
-            border: `${theme.borders[1]} ${theme.colors[props.color]}`,
+            border: `${theme.borders[1]} ${theme.colors[color]}`,
             outline: 'none'
           }
         }
       }
-    }),
-  variant({
+    })}
+  ${variant({
     prop: 'size',
     variants: {
       sm: {
@@ -87,8 +83,8 @@ const StyledButton = styled('button')(
         fontSize: 2
       }
     }
-  })
-);
+  })}
+`;
 
 function Button({ children, color, disabled, onClick, size, type }) {
   return (

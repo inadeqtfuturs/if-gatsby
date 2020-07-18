@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { Styled, ThemeProvider } from 'theme-ui'
+import { ThemeProvider as StyledProvider } from 'styled-components';
 import { configure, addDecorator } from '@storybook/react';
 import { theme } from '../src/components';
 
@@ -9,13 +10,15 @@ const StoryWrapper = styled.div`
 `;
 
 addDecorator(storyFn => (
-  <ThemeProvider theme={theme}>
-    <Styled.root>
-      <StoryWrapper>
-        {storyFn()}
-      </StoryWrapper>
-    </Styled.root>
-  </ThemeProvider>
+  <StyledProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <Styled.root>
+        <StoryWrapper>
+          {storyFn()}
+        </StoryWrapper>
+      </Styled.root>
+    </ThemeProvider>
+  </StyledProvider>
 ))
 
 configure(require.context('../src', true, /\.stories\.js$/), module);

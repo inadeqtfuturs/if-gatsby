@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
+import styled, { css } from 'styled-components';
 import { variant } from 'styled-system';
 import { Input as ThemeInput, Label as ThemeLabel } from 'theme-ui';
-import { theme } from '..';
 
 const FieldWrapper = styled('div')(
   {
@@ -25,33 +24,34 @@ const FieldWrapper = styled('div')(
 
 const HelpText = styled.small``;
 
-const StyledInput = styled(ThemeInput)(
-  {
-    '&:focus': {
-      boxShadow: `0 0 4px 1px ${theme.colors.primary}`,
-      outline: 'none'
+const StyledInput = styled(ThemeInput)`
+  ${({ theme }) => css`
+    &:focus {
+      box-shadow: 0 0 4px 1px ${theme.colors.primary};
+      outline: none;
     }
-  },
-  variant({
-    prop: 'size',
-    variants: {
-      sm: {
-        fontSize: 1,
-        p: 1,
-        mb: 2
-      },
-      md: {
-        fontSize: 2,
-        p: 2,
-        mb: 3
-      },
-      lg: {
-        fontSize: 4,
-        p: 2,
-        mb: 4
+  `}
+  ${(() =>
+    variant({
+      prop: 'size',
+      variants: {
+        sm: {
+          fontSize: 1,
+          p: 1,
+          mb: 2
+        },
+        md: {
+          fontSize: 2,
+          p: 2,
+          mb: 3
+        },
+        lg: {
+          fontSize: 4,
+          p: 2,
+          mb: 4
+        }
       }
-    }
-  }),
+    }),
   variant({
     prop: 'row',
     variants: {
@@ -63,8 +63,8 @@ const StyledInput = styled(ThemeInput)(
         flexDirection: 'column'
       }
     }
-  })
-);
+  }))}
+`;
 
 const StyledLabel = styled(ThemeLabel)(
   variant({

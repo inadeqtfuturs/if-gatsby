@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 
 const StyledImage = styled.img`

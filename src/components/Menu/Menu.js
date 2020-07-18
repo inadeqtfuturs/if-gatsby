@@ -1,33 +1,38 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import styled from '@emotion/styled';
+import styled, { css } from 'styled-components';
 import { FaBars, FaChevronDown, FaTimes } from 'react-icons/fa';
-import { theme } from '..';
 
 const Dropdown = styled.ul`
-  padding: ${theme.space[2]} 0 0;
-  margin: ${theme.space[2]} 0 0;
-  border-top: ${theme.borders[1]} ${theme.colors.text};
-  ${theme.mediaQueries.sm} {
-    border: none;
-    padding: 0;
-  }
+  ${({ theme }) => css`
+    padding: ${theme.space[2]} 0 0;
+    margin: ${theme.space[2]} 0 0;
+    border-top: ${theme.borders[1]} ${theme.colors.text};
+    ${theme.mediaQueries.sm} {
+      border: none;
+      padding: 0;
+    }
+  `}
 `;
 
 const DropdownIcon = styled(FaChevronDown)`
   display: none;
-  ${theme.mediaQueries.sm} {
-    display: flex;
-    margin-left: ${theme.space[2]};
-  }
+  ${({ theme }) => css`
+    ${theme.mediaQueries.sm} {
+      display: flex;
+      margin-left: ${theme.space[2]};
+    }
+  `}
 `;
 
 const StyledLink = styled(Link)`
   text-decoration: none;
   display: flex;
   align-items: center;
-  color: ${theme.colors.text};
+  ${({ theme }) => css`
+    color: ${theme.colors.text};
+  `}
   &:hover {
     opacity: 0.6;
   }
@@ -36,82 +41,88 @@ const StyledLink = styled(Link)`
 const ListItem = styled.li`
   list-style: none;
   cursor: pointer;
-  font-family: ${theme.fonts.heading};
-  font-weight: ${theme.fontWeights[1]};
-  font-size: ${theme.fontSizes[4]};
-  padding: ${theme.space[2]} 0;
-  // targets sub items
-  ul li {
-    padding: 0;
-    margin: 0;
+  ${({ theme }) => css`
+    font-family: ${theme.fonts.heading};
     font-weight: ${theme.fontWeights[1]};
     font-size: ${theme.fontSizes[4]};
-  }
-  ${theme.mediaQueries.sm} {
-    margin-right: ${theme.space[4]};
-    display: block;
-    transition-duration: 0.32;
-    flex-direction: column;
-    & ul {
-      visibility: hidden;
-      opacity: 0;
-      display: none;
-      transition: all 0.3s ease;
-    }
-    &:hover > ul,
-    &:focus-within > ul {
-      visibility: visible;
-      opacity: 1;
-      display: block;
-      position: absolute;
-    }
-    &:last-child {
+    padding: ${theme.space[2]} 0;
+    // targets sub items
+    ul li {
+      padding: 0;
       margin: 0;
+      font-weight: ${theme.fontWeights[1]};
+      font-size: ${theme.fontSizes[4]};
     }
-  }
+    ${theme.mediaQueries.sm} {
+      margin-right: ${theme.space[4]};
+      display: block;
+      transition-duration: 0.32;
+      flex-direction: column;
+      & ul {
+        visibility: hidden;
+        opacity: 0;
+        display: none;
+        transition: all 0.3s ease;
+      }
+      &:hover > ul,
+      &:focus-within > ul {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+        position: absolute;
+      }
+      &:last-child {
+        margin: 0;
+      }
+    }
+  `}
 `;
 
 const Nav = styled.nav`
   display: flex;
   flex-direction: column;
   position: absolute;
-  background-color: ${theme.colors.background};
-  top: 0;
-  left: 0;
-  transition: transform 0.3s ease-in-out;
-  height: 100vh;
-  width: 100%;
-  padding: ${theme.space[4]};
-  z-index: ${theme.zIndices[6]};
-  transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
-  ${theme.mediaQueries.sm} {
-    flex-direction: row;
-    background-color: transparent;
-    position: relative;
-    background-color: transparent;
-    height: auto;
-    width: auto;
-    transition: none;
-    padding: 0;
-    transform: none;
-  }
+  ${({ theme }) => css`
+    background-color: ${theme.colors.background};
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+    height: 100vh;
+    width: 100%;
+    padding: ${theme.space[4]};
+    z-index: ${theme.zIndices[6]};
+    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
+    ${theme.mediaQueries.sm} {
+      flex-direction: row;
+      background-color: transparent;
+      position: relative;
+      background-color: transparent;
+      height: auto;
+      width: auto;
+      transition: none;
+      padding: 0;
+      transform: none;
+    }
+  `}
 `;
 
 const Toggle = styled.button`
   position: absolute;
-  right: ${theme.space[3]};
-  top: ${theme.space[3]};
-  z-index: ${theme.zIndices[6]};
-  background-color: transparent;
-  border: none;
-  svg {
-    path {
-      fill: ${theme.colors.text};
+  ${({ theme }) => css`
+    right: ${theme.space[3]};
+    top: ${theme.space[3]};
+    z-index: ${theme.zIndices[6]};
+    background-color: transparent;
+    border: none;
+    svg {
+      path {
+        fill: ${theme.colors.text};
+      }
     }
-  }
-  ${theme.mediaQueries.sm} {
-    display: none;
-  }
+    ${theme.mediaQueries.sm} {
+      display: none;
+    }
+  `}
 `;
 
 function Item({ label, to }) {
@@ -133,7 +144,7 @@ function MenuItem({ item }) {
   return subItems ? (
     <ListItem key={label}>
       <StyledLink to={to}>
-        {label} <DropdownIcon size={theme.fontSizes[2]} />
+        {label} <DropdownIcon />
       </StyledLink>
       <Dropdown>
         {subItems.map(subItem => {
