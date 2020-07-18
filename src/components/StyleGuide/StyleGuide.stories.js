@@ -1,12 +1,11 @@
 import React from 'react';
-import { Styled } from 'theme-ui';
 import { storiesOf } from '@storybook/react';
 import { TypeScale, TypeStyle, ColorPalette } from '@theme-ui/style-guide';
 import { theme } from '@components';
 
 storiesOf('Styled Guide', module).add('default', () => (
   <>
-    <Styled.h1>Style Guide</Styled.h1>
+    <h1>Style Guide</h1>
     <ColorPalette />
     <TypeScale fontFamily="heading" fontWeight={1} />
     <h1>Heading 1: Lorem ipsum</h1>
