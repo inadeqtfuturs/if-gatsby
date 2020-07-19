@@ -21,7 +21,9 @@ module.exports = {
       {
         devDependencies: [
           ".storybook/**",
-          "stories/**" 
+          "stories/**",
+          "jest/**",
+          "**/*.test.js"
         ]
       }
     ],
