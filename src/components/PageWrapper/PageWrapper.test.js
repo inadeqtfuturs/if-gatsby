@@ -1,13 +1,13 @@
 import React from 'react';
-import { Header } from '@components';
+import { PageWrapper } from '@components';
 import ThemeRender from '@utils/testing';
 
-describe('Header', () => {
+describe('Main', () => {
   it('renders correctly', () => {
     const tree = ThemeRender(
-      <Header>
+      <PageWrapper>
         <p>hello world</p>
-      </Header>
+      </PageWrapper>
     );
     expect(tree).toMatchSnapshot();
   });

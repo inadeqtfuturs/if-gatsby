@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header renders correctly 1`] = `
-<header
-  className="sc-fzqBZW kvyVsY"
+exports[`Main renders correctly 1`] = `
+<main
+  className="sc-fzoyAV lgNqAT"
 >
   <div
     className="sc-AxirZ jpbKm"
@@ -18,13 +18,9 @@ exports[`Header renders correctly 1`] = `
       ]
     }
   >
-    <div
-      className="sc-fzqNJr SXYWe"
-    >
-      <p>
-        hello world
-      </p>
-    </div>
+    <p>
+      hello world
+    </p>
   </div>
-</header>
+</main>
 `;

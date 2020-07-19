@@ -130,7 +130,7 @@ function Input({
   const hasError = !!(touched && error);
 
   return (
-    <FieldWrapper disabled={disabled} row={row}>
+    <FieldWrapper row={row}>
       {label && (
         <StyledLabel htmlFor={name} row={row} required={required} size={size}>
           {label}
@@ -142,6 +142,7 @@ function Input({
         row={row}
         size={size}
         error={hasError}
+        disabled={disabled}
         {...input}
       />
       {helpText && <HelpText>{helpText}</HelpText>}

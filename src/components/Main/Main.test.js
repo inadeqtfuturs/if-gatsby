@@ -1,13 +1,13 @@
 import React from 'react';
-import { Header } from '@components';
+import { Main } from '@components';
 import ThemeRender from '@utils/testing';
 
-describe('Header', () => {
+describe('Main', () => {
   it('renders correctly', () => {
     const tree = ThemeRender(
-      <Header>
+      <Main>
         <p>hello world</p>
-      </Header>
+      </Main>
     );
     expect(tree).toMatchSnapshot();
   });

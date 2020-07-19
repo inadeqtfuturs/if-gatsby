@@ -23,6 +23,7 @@ module.exports = {
           ".storybook/**",
           "stories/**",
           "jest/**",
+          "src/utils/**",
           "**/*.test.js"
         ]
       }

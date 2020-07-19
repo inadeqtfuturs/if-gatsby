@@ -9,7 +9,7 @@ const StyledImage = styled.img`
     brightness(115%) contrast(94%);
 `;
 
-function Branding() {
+function Branding({ ...props }) {
   const logo = useStaticQuery(
     graphql`
       query {
@@ -20,7 +20,7 @@ function Branding() {
     `
   );
 
-  return <StyledImage src={logo.path.publicURL} />;
+  return <StyledImage {...props} src={logo.path.publicURL} />;
 }
 
 export default Branding;

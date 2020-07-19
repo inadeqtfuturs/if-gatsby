@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input displays error state 1`] = `
+<div
+  className="sc-fzoLsD kqvQGr"
+>
+  <label
+    className="sc-fznyAO KFPww css-knfhfe"
+    htmlFor="error"
+    required={false}
+    size="md"
+  >
+    error
+  </label>
+  <input
+    className="sc-fzplWN eYgDYr css-iyqgnx"
+    disabled={false}
+    name="error"
+    placeholder={null}
+    size="md"
+  />
+</div>
+`;
+
+exports[`Input displays help text 1`] = `
+<div
+  className="sc-fzoLsD kqvQGr"
+>
+  <label
+    className="sc-fznyAO KFPww css-knfhfe"
+    htmlFor="help"
+    required={false}
+    size="md"
+  >
+    help
+  </label>
+  <input
+    className="sc-fzplWN AecOf css-iyqgnx"
+    disabled={false}
+    name="help"
+    placeholder={null}
+    size="md"
+  />
+  <small
+    className="sc-fzpans kkFAbe"
+  >
+    here's some help text
+  </small>
+</div>
+`;
+
+exports[`Input renders correctly 1`] = `
+<div
+  className="sc-fzoLsD kqvQGr"
+>
+  <input
+    className="sc-fzplWN AecOf css-iyqgnx"
+    disabled={false}
+    name="test"
+    placeholder={null}
+    size="md"
+  />
+</div>
+`;
+
+exports[`Input takes props 1`] = `
+<div
+  className="sc-fzoLsD dDqpSf"
+>
+  <label
+    className="sc-fznyAO VGARM css-knfhfe"
+    htmlFor="name"
+    required={true}
+    size="lg"
+  >
+    name
+  </label>
+  <input
+    className="sc-fzplWN eJwMql css-iyqgnx"
+    disabled={true}
+    name="name"
+    placeholder="full name"
+    size="lg"
+  />
+</div>
+`;
