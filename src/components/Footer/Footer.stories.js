@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { storiesOf } from '@storybook/react';
-import { Footer, theme } from '@components';
+import { Footer } from '@components';
 
 const Column = styled.div`
   display: flex;
@@ -12,9 +12,9 @@ const Column = styled.div`
 const FooterContent = styled.div`
   display: flex;
   flex-direction: column;
-  ${theme.mediaQueries.sm} {
+  ${({ theme }) => theme.sm`
     flex-direction: row;
-  }
+  `}
 `;
 
 storiesOf('Footer', module).add('example', () => (

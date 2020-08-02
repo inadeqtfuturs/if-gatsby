@@ -5,16 +5,16 @@ exports[`Header renders correctly 1`] = `
   className="sc-fzqBZW kvyVsY"
 >
   <div
-    className="sc-AxirZ jpbKm"
+    className="sc-AxirZ gXXnrR"
     height="100%"
     width={
       Array [
         null,
-        "536px",
-        "708px",
-        "900px",
-        "1080px",
-        "1200px",
+        "540px",
+        "720px",
+        "960px",
+        "1140px",
+        "1320px",
       ]
     }
   >

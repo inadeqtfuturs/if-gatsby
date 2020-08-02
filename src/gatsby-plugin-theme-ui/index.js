@@ -19,7 +19,7 @@ import {
  */
 
 const bp = [576, 768, 992, 1200, 1400];
-const contentAtBp = [536, 708, 900, 1080, 1200];
+const contentAtBp = [540, 720, 960, 1140, 1320];
 const baseFontSize = 16;
 const colors = {
   text: '#f7f7f7',
@@ -49,7 +49,7 @@ const space = getSpaceSizes(baseSpaceSize);
  */
 const theme = {
   breakpoints,
-  mediaQueries,
+  ...mediaQueries,
   contentWidth,
   fonts: {
     body,

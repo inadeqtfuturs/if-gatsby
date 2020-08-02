@@ -9,20 +9,18 @@ const Dropdown = styled.ul`
     padding: ${theme.space[2]} 0 0;
     margin: ${theme.space[2]} 0 0;
     border-top: ${theme.borders[1]} ${theme.colors.text};
-    ${theme.mediaQueries.sm} {
+    ${theme.sm`
       border: none;
       padding: 0;
-    }
+    `}
   `}
 `;
 
 const DropdownIcon = styled(FaChevronDown)`
   display: none;
-  ${({ theme }) => css`
-    ${theme.mediaQueries.sm} {
+  ${({ theme }) => theme.sm`
       display: flex;
       margin-left: ${theme.space[2]};
-    }
   `}
 `;
 
@@ -53,7 +51,7 @@ const ListItem = styled.li`
       font-weight: ${theme.fontWeights[1]};
       font-size: ${theme.fontSizes[4]};
     }
-    ${theme.mediaQueries.sm} {
+    ${theme.sm`
       margin-right: ${theme.space[4]};
       display: block;
       transition-duration: 0.32;
@@ -74,7 +72,7 @@ const ListItem = styled.li`
       &:last-child {
         margin: 0;
       }
-    }
+    `}
   `}
 `;
 
@@ -92,7 +90,7 @@ const Nav = styled.nav`
     padding: ${theme.space[4]};
     z-index: ${theme.zIndices[6]};
     transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
-    ${theme.mediaQueries.sm} {
+    ${theme.sm`
       flex-direction: row;
       background-color: transparent;
       position: relative;
@@ -102,7 +100,7 @@ const Nav = styled.nav`
       transition: none;
       padding: 0;
       transform: none;
-    }
+    `}
   `}
 `;
 
@@ -119,9 +117,9 @@ const Toggle = styled.button`
         fill: ${theme.colors.text};
       }
     }
-    ${theme.mediaQueries.sm} {
+    ${theme.sm`
       display: none;
-    }
+    `}
   `}
 `;
 

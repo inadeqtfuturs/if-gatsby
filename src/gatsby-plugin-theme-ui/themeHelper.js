@@ -1,3 +1,5 @@
+import { css } from 'styled-components';
+
 /**
  * theme constants
  */
@@ -60,15 +62,20 @@ export function getBreakPoints(bp) {
   return bp.map(p => `${p}px`);
 }
 
+const bpSizes = ['sm', 'md', 'lg', 'xl', 'xxl'];
+
 export function getMediaQueries(bp) {
-  return {
-    xs: `@media screen and (max-width: ${bp[0]}px)`,
-    sm: `@media screen and (min-width: ${bp[0]}px)`,
-    md: `@media screen and (min-width: ${bp[1]}px)`,
-    lg: `@media screen and (min-width: ${bp[2]}px)`,
-    xl: `@media screen and (min-width: ${bp[3]}px)`,
-    xxl: `@media screen and (min-width: ${bp[4]}px)`
-  };
+  return bpSizes.reduce(
+    (acc, cur, idx) => ({
+      [cur]: (...args) => css`
+        @media (min-width: ${bp[idx]}px) {
+          ${css(...args)}
+        }
+      `,
+      ...acc
+    }),
+    {}
+  );
 }
 
 export function getContentWidth(bp) {

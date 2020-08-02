@@ -3,11 +3,11 @@
 exports[`Menu renders correctly 1`] = `
 Array [
   <nav
-    className="sc-Axmtr hZPiec"
+    className="sc-Axmtr hjmLzr"
     open={false}
   >
     <li
-      className="sc-AxheI fBXKxa"
+      className="sc-AxheI hvOIOR"
     >
       <a
         className="sc-AxgMl kuYXIx"
@@ -17,7 +17,7 @@ Array [
       </a>
     </li>
     <li
-      className="sc-AxheI fBXKxa"
+      className="sc-AxheI hvOIOR"
     >
       <a
         className="sc-AxgMl kuYXIx"
@@ -26,7 +26,7 @@ Array [
         nest
          
         <svg
-          className="sc-AxhUy hTVZBe"
+          className="sc-AxhUy fGpvwp"
           fill="currentColor"
           height="1em"
           stroke="currentColor"
@@ -46,10 +46,10 @@ Array [
         </svg>
       </a>
       <ul
-        className="sc-AxhCb brPVnz"
+        className="sc-AxhCb gUIVdE"
       >
         <li
-          className="sc-AxheI fBXKxa"
+          className="sc-AxheI hvOIOR"
         >
           <a
             className="sc-AxgMl kuYXIx"
@@ -59,7 +59,7 @@ Array [
           </a>
         </li>
         <li
-          className="sc-AxheI fBXKxa"
+          className="sc-AxheI hvOIOR"
         >
           <a
             className="sc-AxgMl kuYXIx"
@@ -72,7 +72,7 @@ Array [
     </li>
   </nav>,
   <button
-    className="sc-AxmLO efJKYl"
+    className="sc-AxmLO fralDa"
     onClick={[Function]}
   >
     <svg

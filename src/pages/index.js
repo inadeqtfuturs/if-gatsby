@@ -1,15 +1,17 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
-import { Layout, SEO, theme } from '@components';
+import { Layout, SEO } from '@components';
 
 const StyledHeader = styled.h1`
-  font-size: ${theme.fontSizes[5]};
   margin-top: 2rem;
-  ${theme.mediaQueries.sm} {
-    font-size: ${theme.fontSizes[6]};
-    margin-top: 0;
-  }
+  ${({ theme }) => css`
+    font-size: ${theme.fontSizes[5]};
+    ${theme.sm`
+        font-size: ${theme.fontSizes[6]};
+        margin-top: 0;
+    `}
+  `}
 `;
 
 // placeholder hero
@@ -29,10 +31,10 @@ const StyledImage = styled.img`
   filter: invert(97%) sepia(1%) saturate(357%) hue-rotate(158deg)
     brightness(115%) contrast(94%)
     drop-shadow(4px 12px 12px rgba(0, 0, 0, 0.33));
-  ${theme.mediaQueries.sm} {
+  ${({ theme }) => theme.sm`
     height: 20rem;
     width: 20rem;
-  }
+  `}
 `;
 
 const Wrapper = styled.div`
@@ -41,10 +43,10 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  ${theme.mediaQueries.md} {
+  ${({ theme }) => theme.md`
     flex-direction: row;
     justify-content: space-between;
-  }
+  `}
 `;
 
 function Index() {
